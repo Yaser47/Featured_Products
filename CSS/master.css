@@ -1,0 +1,147 @@
+* {	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--WhiteColor: #fff;
+	--BlueGrayColor: #607d8b;
+	--GrayColor: #EEE;
+	--RedColor: #f44336;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+/* Medium */
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+/* Large */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+.title {
+	background-color: var(--BlueGrayColor);
+	color: white;
+	width: fit-content;
+	margin: 20px 20px 40px;
+	padding: 10px 25px;
+}
+main .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	gap: 40px;
+}
+.box {
+	border: 6px solid var(--GrayColor);
+	text-align: center;
+	position: relative;
+	padding-bottom: 15px;
+}
+.box img {
+	max-width: 100%;
+}
+.text {
+	margin-bottom: 15px;
+	margin-top: 10px;
+	color: var(--BlueGrayColor);
+}
+.price {
+	color: var(--BlueGrayColor);
+	font-weight: bold;
+	font-size: 1.25em;
+	position: relative;
+}
+.price::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f155";
+	font-weight: 900;
+	font-size: 16px;
+	margin-right: 2px;
+}
+.price::after {
+	content: "";
+	position: absolute;
+	width: 85%;
+	height: 3px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-image: linear-gradient(to right,var(--GrayColor) 30%, transparent 30%, transparent 70%, var(--GrayColor) 70%);
+}
+.new-price {
+	position: relative;
+}
+.new-price::before {
+	content: "";
+	position: absolute;
+	width: 85%;
+	height: 3px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-image: linear-gradient(to right,var(--GrayColor) 20%, transparent 20%, transparent 80%, var(--GrayColor) 80%);
+}
+.new-price .old {
+	font-size: 0.9em;
+	color: #999;
+	text-decoration: line-through;
+	position: relative;
+}
+.new-price .old::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f155";
+	font-weight: 900;
+	font-size: 12px;
+	margin-right: 2px;
+}
+.new-price .new {
+	margin-left: 5px;
+	color: var(--RedColor);
+	font-weight: bold;
+	position: relative;
+	font-size: 1.25em;
+}
+.new-price .new::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f155";
+	font-weight: 900;
+	font-size: 16px;
+	margin-right: 2px;
+}
+
+.sale {
+	position: absolute;
+	background-color: var(--RedColor);
+	color: white;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	left: -25px;
+	top: -25px;
+}
+
+
+
